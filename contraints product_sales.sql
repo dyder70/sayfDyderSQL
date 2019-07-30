@@ -1,0 +1,90 @@
+USE product_sales;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE products
+ADD FOREIGN KEY fk_category(category_id)
+REFERENCES categories(category_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE;
+
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE products
+ADD FOREIGN KEY fk_brand(brand_id)
+REFERENCES brands(brand_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE orders
+ADD FOREIGN KEY fk_customer(customer_id)
+REFERENCES customers(customer_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE orders
+ADD FOREIGN KEY fk_store(store_id)
+REFERENCES stores(store_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE orders
+ADD FOREIGN KEY fk_staff(staff_id)
+REFERENCES staffs(staff_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE order_items
+ADD FOREIGN KEY fk_order(order_id)
+REFERENCES orders(order_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE order_items
+ADD FOREIGN KEY fk_product(product_id)
+REFERENCES products(product_id)
+--ON DELETE NO ATION
+--NO UPDATE CASCADE
+;
+
+--JOINTURE FOREGN KEY
+ALTER TABLE stocks
+ADD FOREIGN KEY fk_store(store_id)
+REFERENCES stores(store_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE stocks
+ADD FOREIGN KEY fk_product(product_id)
+REFERENCES products(product_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE staffs
+ADD FOREIGN KEY fk_store(store_id)
+REFERENCES stores(store_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
+--JOINTURE FOREIGN KEY
+ALTER TABLE staffs
+ADD FOREIGN KEY fk_manager(manager_id)
+REFERENCES staffs(staff_id)
+--ON DELETE NO ACTION
+--ON UPDATE CASCADE
+;
+
